@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>So ngay trong mot thang</title>
+</head>
+<body>
+<input id="month" placeholder="Nhập tháng ">
+<button type="button" onclick="tinhsongay()">Tính số ngày</button>
+<p id="result"></p>
+<script>
+    function tinhsongay() {
+        let month = parseInt(document.getElementById("month").value);
+        let numberofdays;
+        switch (month) {
+            case 1:
+            case 3:
+            case 5:
+            case 7:
+            case 8:
+            case 10:
+            case 12:
+                numberofdays = '31';
+                break;
+            case 2:
+                numberofdays = '28 hoặc 29';
+                break;
+            default:
+                numberofdays = '30';
+                break;
+        }
+        document.getElementById('result').innerHTML = "Tháng " + month + " có " + numberofdays + " ngày"
+    }
+</script>
+</body>
+</html>
